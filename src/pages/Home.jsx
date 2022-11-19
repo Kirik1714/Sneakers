@@ -11,6 +11,8 @@ const Home = () => {
          </div>
        </Link>
        <Link to="/mainSite">Основной сайт</Link>
+       <Link to="/mainSite">Основной сайт</Link>
+
      </>
    );
 }
