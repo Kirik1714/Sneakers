@@ -2,7 +2,7 @@ import React from 'react'
 
 const MainWebSite = () => {
   return (
-    <div>ыеб</div>
+    <div>Каталог</div>
   )
 }
 
