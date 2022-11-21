@@ -1,0 +1,11 @@
+.block{
+    padding: 20px;
+    border:  1px solid #808080;
+    border-radius: 20px;
+    &__info{
+        display: flex;
+        &__price{
+            flex-grow: 1;
+        }
+    }
+}
