@@ -7,11 +7,39 @@
 }
 
 .block{
-
+   
     &_conteiner{
+        margin-left: 105px;
         display: flex;
        flex-wrap: wrap;
-       justify-content: center;
-       gap :20px;
+       gap :25px;
+    }
+    &_sort{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    &_search{
+        display: flex;
+        align-items: center;
+        margin-left: 105px;
+        border: 1px solid #50c878;
+        box-sizing: border-box;
+        border-radius: 8px;
+        height: 40px;
+        width: 250px;
+        margin-bottom: 30px;
+        padding: 10px;
+        input {
+            border: 0;
+        }
+        
+        
+    }
+    &_popup{
+        margin-left: auto; 
+        margin-right: 105px;    
+
     }
 }
+

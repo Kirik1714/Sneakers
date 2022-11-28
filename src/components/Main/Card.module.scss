@@ -1,0 +1,20 @@
+.block{
+    padding: 20px;
+    border:  2px solid #30d5c8;
+    border-radius: 20px;
+    &__info{
+        display: flex;
+        &__price{
+            flex-grow: 1;
+        }
+    }
+    &:hover{
+        box-shadow: 0px 10px 30px #7efff4;
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+}
+
+.checkBusket{
+    color: #50c878;
+}
