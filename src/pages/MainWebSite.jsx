@@ -11,15 +11,18 @@ import Popup from '../components/Main/Popup';
 
 const MainWebSite = () => {
   const [item,setItem] = useState([]);
+  const [searchValue,setSearchValue]= useState('');
+
  
   React.useEffect(() => {
     const fetchData = async() =>{
-       const {data} = await axios.get(`http://localhost:3001/items`)
+       const {data} = await axios.get(`http://localhost:3001/items?q=${searchValue}`)
       return setItem(data);
     }
     fetchData()
-  }, []);
+  }, [searchValue]);
 
+  console.log(searchValue);
 
   return (
     <div className={style.block}>
@@ -27,7 +30,7 @@ const MainWebSite = () => {
       
      <div className={style.block_sort}>
       <div className={style.block_search}>
-        <Search  />
+        <Search  searchValue={searchValue}  setSearchValue={setSearchValue} />
       </div>
       <div className={style.block_popup}>
         <Popup/>

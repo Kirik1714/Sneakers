@@ -24,7 +24,7 @@ export const Headers = () => {
         <div >
           <ul className={style.infoData}>
             <span> 1</span>
-            <li><img src={basket} className={style.basket}/></li>
+            <li><Link to='/basket'><img src={basket} className={style.basket}/></Link></li>
             <li><img src={account}/></li>
           </ul>
         </div>
