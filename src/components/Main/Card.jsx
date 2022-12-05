@@ -1,8 +1,26 @@
 import React, { useState } from 'react'
 import style from './Card.module.scss'
 import { Link } from 'react-router-dom';
-const Card = ({url,title,price}) => {
+import { useDispatch } from 'react-redux';
+import { addToBasketSneakers } from '../../redux/Reducers/basketReducer';
+const Card = ({url,title,price,id}) => {
   const [isAddedToBasket,setIsAddedToBasket] = useState(false);
+  
+  const dispatch = useDispatch()
+
+
+  const addToBasket = (url,title,price,id) =>{
+    const sniakers = {
+      url,
+      title,
+      price,
+      id,
+
+    }
+    
+    dispatch(addToBasketSneakers(sniakers))
+    setIsAddedToBasket(true)
+  }
 
   return (
     <div className={style.block}>
@@ -15,9 +33,9 @@ const Card = ({url,title,price}) => {
         </div>
 
         {isAddedToBasket ? (
-          <Link to="/" className={style.checkBusket}>ПРОСМОТР КОРЗИНЫ</Link>
+          <Link to="/basket" className={style.checkBusket}>ПРОСМОТР КОРЗИНЫ</Link>
         ) : (
-          <Link onClick={() => setIsAddedToBasket(true)}>В КОРЗИНУ</Link>
+          <Link onClick={() => addToBasket(url,title,price,id)}>В КОРЗИНУ</Link>
         )}
       </div>
     </div>

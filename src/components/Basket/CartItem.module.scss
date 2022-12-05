@@ -1,0 +1,44 @@
+.block{
+    margin-left: 50px;
+    &_conteiner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+    }
+
+    .img{
+        width: 350px;
+    }
+    .removeBtn{
+        padding-top: 70px;
+        width: 32px;
+    }
+    .text{
+        padding-top: 70px;
+        max-width: 400px;
+        overflow-wrap:break-word;
+        margin-right: 15px;
+    }
+    .price{
+        padding-top: 70px;
+    }
+    .minusItem{
+        padding-top: 70px;
+        width: 32px;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+    .addItem{
+        padding-top: 70px;
+        width: 32px;    
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+   .price{
+    margin: 15px;
+   }
+   border-bottom: 1px solid rgb(231, 231, 231);
+}

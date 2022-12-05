@@ -22,7 +22,7 @@ const MainWebSite = () => {
     fetchData()
   }, [searchValue]);
 
-  console.log(searchValue);
+  console.log(item);
 
   return (
     <div className={style.block}>
@@ -45,6 +45,7 @@ const MainWebSite = () => {
             color={obj.color}
             sex={obj.sex}
             url={obj.url}
+            id={obj.id}
             onClick={() => console.log(obj)}
           />
         ))}

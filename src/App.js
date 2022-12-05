@@ -4,11 +4,10 @@ import {Routes,Route} from 'react-router-dom'
 import MainWebSite from './pages/MainWebSite'
 import Home from './pages/Home';
 import Basket from './pages/Basket';
-import {useState } from 'react';
 
 
 
-// const SearchContext = createContext('')
+
 function App() {
   return (
     <div className={style.wrapper}>

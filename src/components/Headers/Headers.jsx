@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 import basket from '../../assets/img/basket.png';
 import account from '../../assets/img/account.png';
+import { useSelector } from 'react-redux';
 
 
 export const Headers = () => {
+  const count = useSelector(state => state.count)
   return (
     <header>
       <Link to='/'><img src={logo} className={style.logo}/> </Link>
@@ -23,7 +25,7 @@ export const Headers = () => {
         </nav>
         <div >
           <ul className={style.infoData}>
-            <span> 1</span>
+            <span> {count}</span>
             <li><Link to='/basket'><img src={basket} className={style.basket}/></Link></li>
             <li><img src={account}/></li>
           </ul>
