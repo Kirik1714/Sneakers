@@ -8,12 +8,12 @@ const CartItem = ({url,title,price,id}) => {
   return (
     <div className={style.block}>
       <div className={style.block_conteiner}>
-        <img  src={del} className={style.removeBtn}/>
+        <img src={del} className={style.removeBtn} />
         <img className={style.img} src={url} alt="sneak" />
         <div className={style.text}>{title}</div>
-        <img src={minusItem}  className={style.minusItem} alt="" />
+        <img src={minusItem} className={style.minusItem} alt="" />
         <p className={style.price}>0</p>
-        <img src={addItem}  className={style.addItem} alt="" />
+        <img src={addItem} className={style.addItem} alt="" />
 
         <div className={style.price}>{price}$</div>
       </div>

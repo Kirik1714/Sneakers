@@ -23,20 +23,14 @@
     .price{
         padding-top: 70px;
     }
-    .minusItem{
+    .minusItem,.addItem,.removeBtn{
         padding-top: 70px;
         width: 32px;
         &:hover{
             opacity: 0.5;
         }
     }
-    .addItem{
-        padding-top: 70px;
-        width: 32px;    
-        &:hover{
-            opacity: 0.5;
-        }
-    }
+   
    .price{
     margin: 15px;
    }

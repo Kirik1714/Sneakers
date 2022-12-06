@@ -1,12 +1,22 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCatagery } from '../../redux/Reducers/filterReducer';
 import style from './Popup.module.scss'
-const categoryItem =['популярности','возрастанию','убыванию']
+
+const categoryItem = [
+  { id: 0, name: "популярности", sortProperty:'rating', order: "desc" },
+  { id: 1, name: "возрастанию цены",sortProperty:'price', order: "asc" },
+  { id: 2, name: "убыванию цены", sortProperty:'price',order: "desc" },
+];
+
+
 
 const Popup = () => {
   const [isOpenPopup,setIsOpenPopup] = React.useState(false);
-  const [choosenCategory,setChoosenCategory] =React.useState(0);
+  const choosenCategory = useSelector(state => state.filter.choosenCategory)
+  const dispatch = useDispatch();
   const changeCategory =(index) =>{
-    setChoosenCategory(index);
+    dispatch(changeCatagery(index))
     setIsOpenPopup(false)
   }
   return (
@@ -17,17 +27,18 @@ const Popup = () => {
           className={style.activType}
           onClick={() => setIsOpenPopup(!isOpenPopup)}
         >
-          {categoryItem[choosenCategory]}
+          {choosenCategory.name}
         </span>{" "}
       </p>
       {isOpenPopup && (
         <ul className={style.popupList}>
-          {categoryItem.map((item, index) => (
+          {categoryItem.map((item,i) => (
             <li
-              className={choosenCategory == index ? style.activType : ""}
-              onClick={() => changeCategory(index)}
+              key={i}
+              className={choosenCategory.id === item.id ? style.activType : style.allCategory}
+              onClick={() => changeCategory(item)}
             >
-              {item}
+              {item.name}
             </li>
           ))}
         </ul>

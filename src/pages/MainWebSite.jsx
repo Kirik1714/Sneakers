@@ -6,23 +6,23 @@ import axios from 'axios';
 
 import { Search } from '../components/Main/Search';
 import Popup from '../components/Main/Popup';
+import {  useSelector } from 'react-redux';
 
 
 
 const MainWebSite = () => {
   const [item,setItem] = useState([]);
+  const choosenCategory = useSelector(state =>state.filter.choosenCategory)
   const [searchValue,setSearchValue]= useState('');
 
- 
   React.useEffect(() => {
     const fetchData = async() =>{
-       const {data} = await axios.get(`http://localhost:3001/items?q=${searchValue}`)
+       const {data} = await axios.get(`http://localhost:3001/items?q=${searchValue}&_sort=${choosenCategory.sortProperty}&_order=${choosenCategory.order}`)
       return setItem(data);
     }
     fetchData()
-  }, [searchValue]);
+  }, [searchValue,choosenCategory]);
 
-  console.log(item);
 
   return (
     <div className={style.block}>
@@ -33,7 +33,7 @@ const MainWebSite = () => {
         <Search  searchValue={searchValue}  setSearchValue={setSearchValue} />
       </div>
       <div className={style.block_popup}>
-        <Popup/>
+        <Popup />
       </div>
      </div>
       <div className={style.block_conteiner}>
@@ -46,7 +46,6 @@ const MainWebSite = () => {
             sex={obj.sex}
             url={obj.url}
             id={obj.id}
-            onClick={() => console.log(obj)}
           />
         ))}
       </div>

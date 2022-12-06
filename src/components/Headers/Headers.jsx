@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux';
 
 
 export const Headers = () => {
-  const count = useSelector(state => state.count)
+  const count = useSelector(state => state.basket.count)
   return (
     <header>
-      <Link to='/'><img src={logo} className={style.logo}/> </Link>
+      <Link to='/'><img src={logo} className={style.logo} alt='logo'/> </Link>
         
         <nav className={style.nav_Bar}>
           <ul className={style.menu}>
@@ -26,8 +26,8 @@ export const Headers = () => {
         <div >
           <ul className={style.infoData}>
             <span> {count}</span>
-            <li><Link to='/basket'><img src={basket} className={style.basket}/></Link></li>
-            <li><img src={account}/></li>
+            <li><Link to='/basket'><img src={basket} className={style.basket} alt='b'/></Link></li>
+            <li><img src={account} alt='acc'/></li>
           </ul>
         </div>
 
