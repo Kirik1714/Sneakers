@@ -4,14 +4,14 @@ import minusItem from '../../assets/img/minusItem.svg';
 import del from '../../assets/img/del.svg';
 import addItem from '../../assets/img/addItem.svg';
 import { useDispatch } from 'react-redux';
-import { addItemCount,minusItemCount,removeItem} from '../../redux/Slices/basketSlice';
+import { addItemCount,minusItemCount,removeItems} from '../../redux/Slices/basketSlice';
 
 const CartItem = ({url,title,price,id,count}) => {
   const dispatch = useDispatch();
   return (
     <div className={style.block}>
       <div className={style.block_conteiner}>
-        <img src={del} onClick={()=>dispatch(removeItem(id))} className={style.removeBtn} />
+        <img src={del} onClick={()=>dispatch(removeItems(id))} className={style.removeBtn} />
         <img className={style.img}  src={url} alt="sneak" />
         <div className={style.text}>{title}</div>
         <img src={minusItem}   className={style.minusItem}  onClick={count>1?()=>dispatch(minusItemCount(id)):style.disabled} alt="" />

@@ -48,6 +48,6 @@ const basketSlices =createSlice({
     }
 })
 
-export const {addToBasketSneakers,addItemCount,removeItem,minusItemCount} = basketSlices.actions;
+export const {addToBasketSneakers,addItemCount,removeItems,minusItemCount} = basketSlices.actions;
 
 export default basketSlices.reducer;
