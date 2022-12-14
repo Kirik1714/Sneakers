@@ -9,7 +9,11 @@ import { useSelector } from 'react-redux';
 
 
 export const Headers = () => {
-  const count = useSelector(state => state.basket.count)
+  const sneakers = useSelector(state => state.basketSlice.sneakers)
+
+ const totalCount = sneakers.reduce((sum,obj)=>sum+obj.count,0)
+
+  
   return (
     <header>
       <Link to='/'><img src={logo} className={style.logo} alt='logo'/> </Link>
@@ -25,7 +29,7 @@ export const Headers = () => {
         </nav>
         <div >
           <ul className={style.infoData}>
-            <span> {count}</span>
+            <span> {totalCount}</span>
             <li><Link to='/basket'><img src={basket} className={style.basket} alt='b'/></Link></li>
             <li><img src={account} alt='acc'/></li>
           </ul>

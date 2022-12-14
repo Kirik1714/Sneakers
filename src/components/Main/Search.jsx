@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import search from '../../assets/img/search.png'
+import { setSearchValue } from '../../redux/Slices/filterSlice'
 import style from './Search.module.scss'
 
-export const Search = ({searchValue,setSearchValue}) => {
+export const Search = () => {
+  const dispatch = useDispatch();
+  const searchValue = useSelector(state =>state.filterSlice.searchValue)
   const changeSearchValue=(event)=>{
-    setSearchValue(event.target.value)
+    dispatch(setSearchValue(event.target.value))
   }
   
   return (

@@ -4,7 +4,7 @@ import CartItem from '../components/Basket/CartItem';
 import WindowOrder from '../components/Basket/WindowOrder';
 import style from './Basket.module.scss'
 const Basket = () => {
-  const sneakers =useSelector(state => state.basket.sneakers)
+  const sneakers =useSelector(state => state.basketSlice.sneakers)
   return (
     <div className={style.block}>
       <div className={style.block_title}>Корзина</div>
@@ -18,6 +18,7 @@ const Basket = () => {
                   id={item.id}
                   title={item.title}
                   price={item.price}
+                  count={item.count}
                 />
               ))}
             </div>

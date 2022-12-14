@@ -1,0 +1,30 @@
+.block {
+  padding: 20px;
+  border: 2px solid #30d5c8;
+  border-radius: 20px;
+}
+
+.block__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block__info__price {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.block:hover {
+  -webkit-box-shadow: 0px 10px 30px #7efff4;
+          box-shadow: 0px 10px 30px #7efff4;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.checkBusket {
+  color: #50c878;
+}
+/*# sourceMappingURL=Card.module.css.map */

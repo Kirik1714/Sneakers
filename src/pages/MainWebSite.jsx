@@ -12,8 +12,8 @@ import {  useSelector } from 'react-redux';
 
 const MainWebSite = () => {
   const [item,setItem] = useState([]);
-  const choosenCategory = useSelector(state =>state.filter.choosenCategory)
-  const [searchValue,setSearchValue]= useState('');
+  const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
+  const searchValue = useSelector(state =>state.filterSlice.searchValue)
 
   React.useEffect(() => {
     const fetchData = async() =>{
@@ -30,7 +30,7 @@ const MainWebSite = () => {
       
      <div className={style.block_sort}>
       <div className={style.block_search}>
-        <Search  searchValue={searchValue}  setSearchValue={setSearchValue} />
+        <Search   />
       </div>
       <div className={style.block_popup}>
         <Popup />
