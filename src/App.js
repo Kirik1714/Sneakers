@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <>
+    <div>
       <div className={style.wrapper}>
         <Headers />
         <Routes>
@@ -19,10 +19,9 @@ function App() {
           <Route path="/main" element={<MainWebSite />} />
           <Route path="/basket" element={<Basket />} />
         </Routes>
-
       </div>
-        <Footer/>
-    </>
+      <Footer />
+    </div>
   );
 }
 
