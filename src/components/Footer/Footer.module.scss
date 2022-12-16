@@ -1,0 +1,19 @@
+.block{
+    padding: 30px;
+    display: flex;
+    color:  #868686;
+    justify-content: space-evenly;
+    line-height:20px;
+    background: #f4f4f4;
+    &_brands{
+        width: 200px;
+
+    }
+    &_contacts{
+        width: 300px;
+
+    }
+    &_auther{
+        width: 200px;
+    }
+}
