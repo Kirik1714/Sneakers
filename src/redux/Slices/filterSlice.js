@@ -7,6 +7,7 @@ const initialState = {
     sortProperty: "rating",
   },
   searchValue:'',
+  sexCategory:'',
 };
 
 
@@ -20,12 +21,15 @@ const filterSlice =createSlice({
     setSearchValue:(state,action)=>{
       state.searchValue = action.payload
     },
+    changeSexCategory(state,action){
+      state.sexCategory = action.payload
+    }
   }
 })
 
 
 
-export const {changeCatagery,setSearchValue} = filterSlice.actions;
+export const {changeCatagery,setSearchValue,changeSexCategory} = filterSlice.actions;
 
 
 export default filterSlice.reducer;

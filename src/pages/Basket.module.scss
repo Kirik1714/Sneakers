@@ -8,13 +8,18 @@
     &_conteiner{
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
     &-mainContent{
+        display: flex;
         flex-grow: 1;
     }
     &_windowOrder{
         margin: 150px auto;
    
 
+    }
+    .basketEmpty{
+        justify-content: center;
     }
 }

@@ -5,6 +5,7 @@ import MainWebSite from './pages/MainWebSite'
 import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Footer from './components/Footer/Footer';
+import FullCard from './components/Main/FullCard';
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/main" element={<MainWebSite />} />
           <Route path="/basket" element={<Basket />} />
+          <Route path='/fullCard/:id' element={<FullCard/>}/>
         </Routes>
       </div>
       <Footer />

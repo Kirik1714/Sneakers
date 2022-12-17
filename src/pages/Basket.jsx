@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import BasketEmpty from '../components/Basket/BasketEmpty';
 import CartItem from '../components/Basket/CartItem';
 import WindowOrder from '../components/Basket/WindowOrder';
 import style from './Basket.module.scss'
@@ -23,10 +24,10 @@ const Basket = () => {
               ))}
             </div>
           ) : (
-            <div>Лох</div>
+            <BasketEmpty className={style.basketEmpty}/>
           )}
         </div>
-        {sneakers.length && <div className={style.block_windowOrder}><WindowOrder/></div>}
+        {sneakers.length ? <div className={style.block_windowOrder}><WindowOrder/></div>:''}
       </div>
     </div>
   );

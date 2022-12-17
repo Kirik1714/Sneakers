@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo.png';
 import basket from '../../assets/img/basket.png';
 import account from '../../assets/img/account.png';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeSexCategory } from '../../redux/Slices/filterSlice';
 
 
 export const Headers = () => {
   const sneakers = useSelector(state => state.basketSlice.sneakers)
-
+  const dispatch=useDispatch();
  const totalCount = sneakers.reduce((sum,obj)=>sum+obj.count,0)
 
   
@@ -20,9 +21,9 @@ export const Headers = () => {
         
         <nav className={style.nav_Bar}>
           <ul className={style.menu}>
-           <Link to ='/main'><li>Каталог</li></Link> 
-            <li>Мужские</li>
-            <li>Женские</li>
+           <Link to ='/main'><li onClick={()=>dispatch(changeSexCategory(''))}>Каталог</li></Link> 
+            <Link><li onClick={()=>dispatch(changeSexCategory('male'))}>Мужские</li></Link>
+            <Link><li onClick={()=>dispatch(changeSexCategory('female'))}>Женские</li></Link>
             <li>Доставка и оплата</li>
             <li>Контакты</li>
           </ul>
