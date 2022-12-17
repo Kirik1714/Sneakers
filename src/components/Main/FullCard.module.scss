@@ -1,0 +1,22 @@
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_foto{
+        width: 500px;
+        margin-right: 50px;
+    }
+    &_description{
+        font-size: 25px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+}
+.btn{
+   
+    font-size: 25px;
+    padding: 20px;
+    border: 1px solid rgb(0, 238, 255);
+    border-radius: 15px;
+    background-color: azure;
+    
+}
