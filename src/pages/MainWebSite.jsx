@@ -13,20 +13,24 @@ import { fetchSneakers } from '../redux/Slices/sneakersSlice';
 
 const MainWebSite = () => {
   const items = useSelector(state =>state.sneakersSlice.items)
-  const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
-  const searchValue = useSelector(state =>state.filterSlice.searchValue);
   const sexCategory =useSelector(state =>state.filterSlice.sexCategory);
-  const sexAllCategory=sexCategory ? `&sex=${sexCategory}`: "&sex=female&sex=male" ;
   const dispatch =useDispatch();
+  const searchValue = useSelector(state =>state.filterSlice.searchValue);
+  const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
+  
+  const sexAllCategory=sexCategory ? `&sex=${sexCategory}`: "&sex=female&sex=male" ;
+  const getSneak =async()=>{
+    dispatch(fetchSneakers({ searchValue, choosenCategory, sexAllCategory }));
+  }
 
   React.useEffect(() => {
+    getSneak()
   try {
-    dispatch(fetchSneakers({ searchValue, choosenCategory, sexAllCategory }));
   } catch (error) {
     console.log(error)
     alert("Не удалось получить кроссовки" );
   }
-  }, [searchValue,choosenCategory,sexCategory,items]);
+  }, [searchValue,choosenCategory,sexCategory]);
 
 
   if(!items){

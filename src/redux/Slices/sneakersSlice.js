@@ -29,7 +29,7 @@ const sneakersSlice=createSlice({
 
         },
         [fetchSneakers.fulfilled]:(state,action)=>{
-         
+            state.items = action.payload
             console.log("Все ок")
         },
         [fetchSneakers.rejected]:(state,action)=>{
