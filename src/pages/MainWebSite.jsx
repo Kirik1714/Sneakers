@@ -6,27 +6,32 @@ import axios from 'axios';
 
 import { Search } from '../components/Main/Search';
 import Popup from '../components/Main/Popup';
-import {  useSelector } from 'react-redux';
+import {  useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { fetchSneakers } from '../redux/Slices/sneakersSlice';
 
 
 const MainWebSite = () => {
-  const [item,setItem] = useState([]);
+  const items = useSelector(state =>state.sneakersSlice.items)
   const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
   const searchValue = useSelector(state =>state.filterSlice.searchValue);
   const sexCategory =useSelector(state =>state.filterSlice.sexCategory);
-  console.log(sexCategory);
   const sexAllCategory=sexCategory ? `&sex=${sexCategory}`: "&sex=female&sex=male" ;
+  const dispatch =useDispatch();
 
   React.useEffect(() => {
-    const fetchData = async() =>{
-       const {data} = await axios.get(`http://localhost:3001/items?q=${searchValue}&_sort=${choosenCategory.sortProperty}&_order=${choosenCategory.order}${sexAllCategory}`)
-      return setItem(data);
-    }
-    fetchData()
-  }, [searchValue,choosenCategory,sexCategory]);
+  try {
+    dispatch(fetchSneakers({ searchValue, choosenCategory, sexAllCategory }));
+  } catch (error) {
+    console.log(error)
+    alert("Не удалось получить кроссовки" );
+  }
+  }, [searchValue,choosenCategory,sexCategory,items]);
 
+
+  if(!items){
+    return 'Загрузка кроссовок';
+  }
 
   return (
     <div className={style.block}>
@@ -41,7 +46,7 @@ const MainWebSite = () => {
         </div>
       </div>
       <div className={style.block_conteiner}>
-        {item.map((obj) => (
+        {items.map((obj) => (
           <Link key={obj.id} to={`/FullCard/${obj.id}`} >
             <Card
               title={obj.title}

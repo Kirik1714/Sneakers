@@ -3,10 +3,11 @@ import style from './Card.module.scss'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import  {addToBasketSneakers}  from '../../redux/Slices/basketSlice';
+import axios from 'axios';
 const Card = ({url,title,price,id,color,sex}) => {
   const [isAddedToBasket,setIsAddedToBasket] = useState(false);
   const dispatch = useDispatch()
-  const addToBasket = (url,title,price,id) =>{
+  const addToBasket = async (url,title,price,id) =>{
     const sneakers = {
       url,
       title,
@@ -15,9 +16,9 @@ const Card = ({url,title,price,id,color,sex}) => {
       count:1,
 
     }
-    console.log(sneakers);
     dispatch(addToBasketSneakers(sneakers))
-    setIsAddedToBasket(true)
+    setIsAddedToBasket(true);
+    
   }
 
   return (

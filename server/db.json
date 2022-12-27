@@ -1,112 +1,113 @@
 {
-    "items":[
-      {
-        "id":1,
-        "title": "Nike Renew Run 2 W",
-        "price": 200,
-        "color": "Белый",
-        "sex": "female",
-        "url": "https://bunt.by/wp-content/uploads/2021/06/Nike-CU3505-103.jpg",
-        "rating":1
-      },
-      {
-        "id":2,
-        "title": "Adidas Originals ZX 500 W Clear Pink",
-        "price": 295,
-        "color": "Розовый",
-        "sex": "female",
-        "url": "https://bunt.by/wp-content/uploads/2021/07/adidas-FX7069-1024x1024.jpg",
-        "rating":2
-      },
-      {
-        "id":3,
-        "title": "Puma Cali Dream Leather W WB",
-        "price": 250,
-        "color": "Белый",
-        "sex": "female",
-        "url": "https://bunt.by/wp-content/uploads/2022/04/Puma-383157-06.jpg",
-        "rating":2
-      },
-      {
-        "id":4,
-        "title": "Nike Zoom 2K Black",
-        "price": 199,
-        "color": "Черный",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2019/11/Nike-AO0269-002.jpg",
-        "rating":3
-      },
-      {
-        "id":5,
-        "title": "Nike Air Max 97 Black",
-        "price": 220,
-        "color": "Черный",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2021/06/BQ4567-001.jpg",
-        "rating":10
-      },
-      {
-        "id":6,
-        "title": "Adidas Originals Forum 84 Low CW/BG",
-        "price": 249,
-        "color": "Белый",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2021/08/GZ8959.jpg",
-        "rating":5
-      },
-      {
-        "id":7,
-        "title": "Adidas Originals Climacool Vento W",
-        "price": 275,
-        "color": "Белый",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2021/07/ADIDAS-H67642.jpg",
-        "rating":4
-      },
-      {
-        "id":8,
-        "title": "Puma X-Ray BMW MMS White",
-        "price": 255,
-        "color": "Белый",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2020/05/306503-02.jpg",
-        "rating":4
-      },
-      {
-        "id":9,
-        "title": "Puma RS-X³ Super W Purple",
-        "price": 345,
-        "color": "Фиолетовый",
-        "sex": "female",
-        "url": "https://bunt.by/wp-content/uploads/2020/03/P-372884-08.jpg",
-        "rating":3
-      },
-      {
-        "id":10,
-        "title": "Reebok Bolton Essential MU Navy",
-        "price": 195,
-        "color": "Синий",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2019/12/Reebok-DV8755.jpg",
-        "rating":1
-      },
-      {
-        "id":11,
-        "title": "Asics Gel-Lyte III RE Grey",
-        "price": 299,
-        "color": "Белый",
-        "sex": "male",
-        "url": "https://bunt.by/wp-content/uploads/2022/03/1201A298-020.jpg",
-        "rating":5
-      },
-      {
-        "id":12,
-        "title": "Asics Gel-Lyte III OG White",
-        "price": 255,
-        "color": "Белый",
-        "sex": "female",
-        "url": "https://bunt.by/wp-content/uploads/2021/05/ASICS-1201A081-100.jpg",
-        "rating":5
-      }
-    ]
+  "items": [
+    {
+      "id": 1,
+      "title": "Nike Renew Run 2 W",
+      "price": 200,
+      "color": "Белый",
+      "sex": "female",
+      "url": "https://bunt.by/wp-content/uploads/2021/06/Nike-CU3505-103.jpg",
+      "rating": 1
+    },
+    {
+      "id": 2,
+      "title": "Adidas Originals ZX 500 W Clear Pink",
+      "price": 295,
+      "color": "Розовый",
+      "sex": "female",
+      "url": "https://bunt.by/wp-content/uploads/2021/07/adidas-FX7069-1024x1024.jpg",
+      "rating": 2
+    },
+    {
+      "id": 3,
+      "title": "Puma Cali Dream Leather W WB",
+      "price": 250,
+      "color": "Белый",
+      "sex": "female",
+      "url": "https://bunt.by/wp-content/uploads/2022/04/Puma-383157-06.jpg",
+      "rating": 2
+    },
+    {
+      "id": 4,
+      "title": "Nike Zoom 2K Black",
+      "price": 199,
+      "color": "Черный",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2019/11/Nike-AO0269-002.jpg",
+      "rating": 3
+    },
+    {
+      "id": 5,
+      "title": "Nike Air Max 97 Black",
+      "price": 220,
+      "color": "Черный",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2021/06/BQ4567-001.jpg",
+      "rating": 10
+    },
+    {
+      "id": 6,
+      "title": "Adidas Originals Forum 84 Low CW/BG",
+      "price": 249,
+      "color": "Белый",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2021/08/GZ8959.jpg",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "title": "Adidas Originals Climacool Vento W",
+      "price": 275,
+      "color": "Белый",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2021/07/ADIDAS-H67642.jpg",
+      "rating": 4
+    },
+    {
+      "id": 8,
+      "title": "Puma X-Ray BMW MMS White",
+      "price": 255,
+      "color": "Белый",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2020/05/306503-02.jpg",
+      "rating": 4
+    },
+    {
+      "id": 9,
+      "title": "Puma RS-X³ Super W Purple",
+      "price": 345,
+      "color": "Фиолетовый",
+      "sex": "female",
+      "url": "https://bunt.by/wp-content/uploads/2020/03/P-372884-08.jpg",
+      "rating": 3
+    },
+    {
+      "id": 10,
+      "title": "Reebok Bolton Essential MU Navy",
+      "price": 195,
+      "color": "Синий",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2019/12/Reebok-DV8755.jpg",
+      "rating": 1
+    },
+    {
+      "id": 11,
+      "title": "Asics Gel-Lyte III RE Grey",
+      "price": 299,
+      "color": "Белый",
+      "sex": "male",
+      "url": "https://bunt.by/wp-content/uploads/2022/03/1201A298-020.jpg",
+      "rating": 5
+    },
+    {
+      "id": 12,
+      "title": "Asics Gel-Lyte III OG White",
+      "price": 255,
+      "color": "Белый",
+      "sex": "female",
+      "url": "https://bunt.by/wp-content/uploads/2021/05/ASICS-1201A081-100.jpg",
+      "rating": 5
+    }
+  ],
+  "cart": []
 }
