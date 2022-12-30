@@ -6,17 +6,17 @@ import search from '../../assets/img/search.png'
 import { setSearchValue } from '../../redux/Slices/filterSlice'
 import style from './Search.module.scss'
 
-export const Search = () => {
+export const Search:React.FC = () => {
   const [value,setValue]=useState();
   const dispatch = useDispatch();
 
   const updateSearchValue = useCallback(
-    debounce((str)=>{
+    debounce((str:string)=>{
       dispatch(setSearchValue(str))
     },1000),[]
   )
 
-  const changeSearchValue=(event)=>{
+  const changeSearchValue=(event:any)=>{
     setValue(event.target.value)
     updateSearchValue(event.target.value)
   }

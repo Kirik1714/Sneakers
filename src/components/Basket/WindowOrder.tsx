@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import style from './WindowOrder.module.scss'
-const WindowOrder = () => {
+
+const WindowOrder:React.FC = () => {
+  //@ts-ignore
   const totalPrice = useSelector(state =>state.basketSlice.totalPrice)
   return (
     <div className={style.block}>

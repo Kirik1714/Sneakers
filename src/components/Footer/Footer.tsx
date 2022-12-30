@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Footer.module.scss'
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
     <div className={style.block}>
       <div className={style.block_brands}>

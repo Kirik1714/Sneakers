@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Card from '../components/Main/Card';
 import style from './MainWebSite.module.scss';
-import axios from 'axios';
 
 
 import { Search } from '../components/Main/Search';
@@ -11,15 +10,21 @@ import { Link } from 'react-router-dom';
 import { fetchSneakers } from '../redux/Slices/sneakersSlice';
 
 
-const MainWebSite = () => {
+const MainWebSite:React.FC = () => {
+  //@ts-ignore
   const items = useSelector(state =>state.sneakersSlice.items)
+  //@ts-ignore
   const sexCategory =useSelector(state =>state.filterSlice.sexCategory);
-  const dispatch =useDispatch();
+  //@ts-ignore
+
   const searchValue = useSelector(state =>state.filterSlice.searchValue);
+  const dispatch =useDispatch();
+  //@ts-ignore
   const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
   
   const sexAllCategory=sexCategory ? `&sex=${sexCategory}`: "&sex=female&sex=male" ;
   const getSneak =async()=>{
+  //@ts-ignore
     dispatch(fetchSneakers({ searchValue, choosenCategory, sexAllCategory }));
   }
 
@@ -33,9 +38,9 @@ const MainWebSite = () => {
   }, [searchValue,choosenCategory,sexCategory]);
 
 
-  if(!items){
-    return 'Загрузка кроссовок';
-  }
+  // if(!items){
+  //   return 'Загрузка кроссовок';
+  // }
 
   return (
     <div className={style.block}>
@@ -50,7 +55,7 @@ const MainWebSite = () => {
         </div>
       </div>
       <div className={style.block_conteiner}>
-        {items.map((obj) => (
+        {items.map((obj:any) => (
           <Link key={obj.id} to={`/FullCard/${obj.id}`} >
             <Card
               title={obj.title}

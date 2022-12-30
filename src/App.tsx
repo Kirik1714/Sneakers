@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Footer from './components/Footer/Footer';
 import FullCard from './components/Main/FullCard';
+import React from 'react';
 
 
 

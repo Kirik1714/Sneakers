@@ -8,16 +8,20 @@ import { PersistGate } from 'redux-persist/integration/react';
 import  store ,{persister} from "./redux/store";
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persister}>
-        <App />
-      </PersistGate>
-    </Provider>
-  </BrowserRouter>
-);
+const rootElem =document.getElementById('root');
+if(rootElem){
+
+  const root = ReactDOM.createRoot(rootElem);
+  root.render(
+    <BrowserRouter>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persister}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
+  );
+}
 
 
 

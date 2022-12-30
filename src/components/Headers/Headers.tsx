@@ -9,10 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeSexCategory } from '../../redux/Slices/filterSlice';
 
 
-export const Headers = () => {
+export const Headers:React.FC = () => {
+ //@ts-ignore
   const sneakers = useSelector(state => state.basketSlice.sneakers)
   const dispatch=useDispatch();
- const totalCount = sneakers.reduce((sum,obj)=>sum+obj.count,0)
+ const totalCount = sneakers.reduce((sum:number,obj:any)=>sum+obj.count,0)
 
   
   return (
@@ -22,8 +23,8 @@ export const Headers = () => {
         <nav className={style.nav_Bar}>
           <ul className={style.menu}>
            <Link to ='/main'><li onClick={()=>dispatch(changeSexCategory(''))}>Каталог</li></Link> 
-            <Link><li onClick={()=>dispatch(changeSexCategory('male'))}>Мужские</li></Link>
-            <Link><li onClick={()=>dispatch(changeSexCategory('female'))}>Женские</li></Link>
+            <Link to=''><li onClick={()=>dispatch(changeSexCategory('male'))}>Мужские</li></Link>
+            <Link to=''><li onClick={()=>dispatch(changeSexCategory('female'))}>Женские</li></Link>
             <li>Доставка и оплата</li>
             <li>Контакты</li>
           </ul>

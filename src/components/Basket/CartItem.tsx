@@ -6,7 +6,15 @@ import addItem from '../../assets/img/addItem.svg';
 import { useDispatch } from 'react-redux';
 import { addItemCount,minusItemCount,removeItems} from '../../redux/Slices/basketSlice';
 
-const CartItem = ({url,title,price,id,count}) => {
+type CartItemInBasket={
+  url:string;
+  title:string;
+  price:number;
+  id:number;
+  count:number;
+}
+
+const CartItem:React.FC<CartItemInBasket> = ({url,title,price,id,count}) => {
   const dispatch = useDispatch();
   return (
     <div className={style.block}>

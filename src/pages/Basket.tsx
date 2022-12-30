@@ -4,7 +4,8 @@ import BasketEmpty from '../components/Basket/BasketEmpty';
 import CartItem from '../components/Basket/CartItem';
 import WindowOrder from '../components/Basket/WindowOrder';
 import style from './Basket.module.scss'
-const Basket = () => {
+const Basket:React.FC = () => {
+  //@ts-ignore
   const sneakers =useSelector(state => state.basketSlice.sneakers)
   return (
     <div className={style.block}>
@@ -13,7 +14,7 @@ const Basket = () => {
         <div className={style.block_mainContent}>
           {sneakers.length > 0 ? (
             <div>
-              {sneakers.map((item) => (
+              {sneakers.map((item:any) => (
                 <CartItem
                   url={item.url}
                   id={item.id}
@@ -24,6 +25,7 @@ const Basket = () => {
               ))}
             </div>
           ) : (
+            //@ts-ignore
             <BasketEmpty className={style.basketEmpty}/>
           )}
         </div>

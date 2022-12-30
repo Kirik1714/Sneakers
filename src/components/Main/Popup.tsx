@@ -4,7 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeCatagery } from '../../redux/Slices/filterSlice';
 import style from './Popup.module.scss'
 
-const categoryItem = [
+
+type CategoryItem={
+  id:number;
+  name:string;
+  sortProperty:string;
+  order:string;
+}
+
+const categoryItem:CategoryItem[] = [
   { id: 0, name: "популярности", sortProperty:'rating', order: "desc" },
   { id: 1, name: "возрастанию цены",sortProperty:'price', order: "asc" },
   { id: 2, name: "убыванию цены", sortProperty:'price',order: "desc" },
@@ -12,18 +20,19 @@ const categoryItem = [
  
 
 
-const Popup = () => {
+const Popup:React.FC = () => {
   const [isOpenPopup,setIsOpenPopup] = React.useState(false);
+  //@ts-ignore
   const choosenCategory = useSelector(state => state.filterSlice.choosenCategory);
-  const sortRef = useRef();
+  const sortRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
-  const changeCategory =(index) =>{
+  const changeCategory =(index:CategoryItem) =>{
     dispatch(changeCatagery(index))
     setIsOpenPopup(false)
   }
 
   React.useEffect(()=>{
-    const handleClickOutsite =(event) =>{
+    const handleClickOutsite =(event:any) =>{
       if(!event.path.includes(sortRef.current)){
         setIsOpenPopup(false);
       }

@@ -8,9 +8,16 @@ import { useDispatch } from "react-redux";
 import { addToBasketSneakers } from "../../redux/Slices/basketSlice";
 
 
-const FullCard =()=>{
+const FullCard:React.FC =()=>{
     const {id} = useParams();
-    const [pizza,setPizza]=useState();
+    const [pizza,setPizza]=useState<{
+      url:string,
+      color:string,
+      title:string,
+      sex:string,
+      price:number,
+      id:number,
+    }>();
     const [isAdded,setIsAdded] = useState(false)
     const dispatch=useDispatch();
     
@@ -26,7 +33,7 @@ const FullCard =()=>{
             alert("Не удалось открыть пиццу((((((((")
         }
     },[id])
-    const addToBasket=(url, title, price, id)=>{
+    const addToBasket=(url:string, title:string, price:number, id:number)=>{
         const sneakers = {
             url,
             title,
@@ -38,7 +45,7 @@ const FullCard =()=>{
           setIsAdded(true)
     }
     if(!pizza){
-        return "Загрузка ......";
+        return <>"Загрузка ......"</>;
     }
 
     return (
@@ -50,7 +57,7 @@ const FullCard =()=>{
             <p>Цвет: {pizza.color}</p>
             <p>Sex : {pizza.sex}</p>
             <p>Цена: {pizza.price}$</p>
-            {isAdded?"Добавлено":<Link
+            {isAdded?"Добавлено":<Link to=""
               className={style.btn}
               onClick={() => addToBasket(pizza.url, pizza.title, pizza.price, pizza.id)}
             >

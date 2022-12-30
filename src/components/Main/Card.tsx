@@ -3,11 +3,20 @@ import style from './Card.module.scss'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import  {addToBasketSneakers}  from '../../redux/Slices/basketSlice';
-import axios from 'axios';
-const Card = ({url,title,price,id,color,sex}) => {
+
+type Card ={
+  url:string;
+  title:string;
+  price:number;
+  id:number;
+  color:string;
+  sex:string;
+}
+
+const Card:React.FC<Card> = ({url,title,price,id,color,sex}) => {
   const [isAddedToBasket,setIsAddedToBasket] = useState(false);
   const dispatch = useDispatch()
-  const addToBasket = async (url,title,price,id) =>{
+  const addToBasket = (url:string,title:string,price:number,id:number) =>{
     const sneakers = {
       url,
       title,
@@ -37,7 +46,7 @@ const Card = ({url,title,price,id,color,sex}) => {
             ПРОСМОТР КОРЗИНЫ
           </Link>
         ) : (
-          <Link onClick={() => addToBasket(url, title, price, id)}>
+          <Link to='' onClick={() => addToBasket(url, title, price, id)}>
             В КОРЗИНУ
           </Link>
         )}
