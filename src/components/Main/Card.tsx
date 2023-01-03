@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import style from './Card.module.scss'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import  {addToBasketSneakers}  from '../../redux/Slices/basketSlice';
+import  {addToBasketSneakers, CartItem}  from '../../redux/Slices/basketSlice';
 
 type Card ={
   url:string;
@@ -17,7 +17,7 @@ const Card:React.FC<Card> = ({url,title,price,id,color,sex}) => {
   const [isAddedToBasket,setIsAddedToBasket] = useState(false);
   const dispatch = useDispatch()
   const addToBasket = (url:string,title:string,price:number,id:number) =>{
-    const sneakers = {
+    const sneakers:CartItem = {
       url,
       title,
       price,

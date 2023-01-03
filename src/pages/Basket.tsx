@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 import BasketEmpty from '../components/Basket/BasketEmpty';
 import CartItem from '../components/Basket/CartItem';
 import WindowOrder from '../components/Basket/WindowOrder';
+import { RootState } from '../redux/store';
 import style from './Basket.module.scss'
 const Basket:React.FC = () => {
-  //@ts-ignore
-  const sneakers =useSelector(state => state.basketSlice.sneakers)
+  const sneakers =useSelector((state:RootState) => state.basketSlice.sneakers)
   return (
     <div className={style.block}>
       <div className={style.block_title}>Корзина</div>
@@ -14,7 +14,7 @@ const Basket:React.FC = () => {
         <div className={style.block_mainContent}>
           {sneakers.length > 0 ? (
             <div>
-              {sneakers.map((item:any) => (
+              {sneakers.map((item) => (
                 <CartItem
                   url={item.url}
                   id={item.id}

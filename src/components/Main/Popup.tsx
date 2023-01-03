@@ -2,8 +2,8 @@ import React from 'react'
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCatagery } from '../../redux/Slices/filterSlice';
+import { RootState } from '../../redux/store';
 import style from './Popup.module.scss'
-
 
 type CategoryItem={
   id:number;
@@ -12,6 +12,10 @@ type CategoryItem={
   order:string;
 }
 
+
+type PopupClick =MouseEvent & {
+  path:Node[];
+};
 const categoryItem:CategoryItem[] = [
   { id: 0, name: "популярности", sortProperty:'rating', order: "desc" },
   { id: 1, name: "возрастанию цены",sortProperty:'price', order: "asc" },
@@ -22,8 +26,7 @@ const categoryItem:CategoryItem[] = [
 
 const Popup:React.FC = () => {
   const [isOpenPopup,setIsOpenPopup] = React.useState(false);
-  //@ts-ignore
-  const choosenCategory = useSelector(state => state.filterSlice.choosenCategory);
+  const choosenCategory = useSelector((state:RootState) => state.filterSlice.choosenCategory);
   const sortRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const changeCategory =(index:CategoryItem) =>{
@@ -32,8 +35,9 @@ const Popup:React.FC = () => {
   }
 
   React.useEffect(()=>{
-    const handleClickOutsite =(event:any) =>{
-      if(!event.path.includes(sortRef.current)){
+    const handleClickOutsite =(event:MouseEvent) =>{
+      const _event = event as PopupClick;
+      if(sortRef.current && !_event.path.includes(sortRef.current)){
         setIsOpenPopup(false);
       }
 

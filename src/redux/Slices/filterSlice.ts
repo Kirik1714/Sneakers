@@ -1,6 +1,19 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import {createSlice} from '@reduxjs/toolkit'
 
-const initialState = {
+interface ChooseCategory{
+  id:number;
+  name:string;
+  sortProperty:string;
+}
+
+type FilterState={
+  choosenCategory:ChooseCategory;
+  searchValue:string;
+  sexCategory:string;
+}
+
+const initialState:FilterState = {
   choosenCategory: {
     id: 0,
     name: "популярности",
@@ -15,13 +28,13 @@ const filterSlice =createSlice({
   name:'filter',
   initialState,
   reducers:{
-    changeCatagery:(state,action)=>{
+    changeCatagery:(state,action:PayloadAction<ChooseCategory>)=>{
       state.choosenCategory=action.payload
     },
-    setSearchValue:(state,action)=>{
+    setSearchValue:(state,action:PayloadAction<string>)=>{
       state.searchValue = action.payload
     },
-    changeSexCategory(state,action){
+    changeSexCategory(state,action:PayloadAction<string>){
       state.sexCategory = action.payload
     }
   }

@@ -7,7 +7,7 @@ import { setSearchValue } from '../../redux/Slices/filterSlice'
 import style from './Search.module.scss'
 
 export const Search:React.FC = () => {
-  const [value,setValue]=useState();
+  const [value,setValue]=useState('');
   const dispatch = useDispatch();
 
   const updateSearchValue = useCallback(
@@ -16,7 +16,7 @@ export const Search:React.FC = () => {
     },1000),[]
   )
 
-  const changeSearchValue=(event:any)=>{
+  const changeSearchValue=(event:React.ChangeEvent<HTMLInputElement>)=>{
     setValue(event.target.value)
     updateSearchValue(event.target.value)
   }

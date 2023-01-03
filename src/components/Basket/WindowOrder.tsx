@@ -1,10 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import style from './WindowOrder.module.scss'
 
 const WindowOrder:React.FC = () => {
-  //@ts-ignore
-  const totalPrice = useSelector(state =>state.basketSlice.totalPrice)
+  
+  const totalPrice = useSelector((state:RootState) =>state.basketSlice.totalPrice)
   return (
     <div className={style.block}>
       <div className={style.block_conteiner}>

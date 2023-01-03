@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import Card from '../components/Main/Card';
 import style from './MainWebSite.module.scss';
 
@@ -8,23 +8,21 @@ import Popup from '../components/Main/Popup';
 import {  useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchSneakers } from '../redux/Slices/sneakersSlice';
+import { RootState, useAppDispatch } from '../redux/store';
 
 
 const MainWebSite:React.FC = () => {
-  //@ts-ignore
-  const items = useSelector(state =>state.sneakersSlice.items)
-  //@ts-ignore
-  const sexCategory =useSelector(state =>state.filterSlice.sexCategory);
-  //@ts-ignore
 
-  const searchValue = useSelector(state =>state.filterSlice.searchValue);
-  const dispatch =useDispatch();
-  //@ts-ignore
-  const choosenCategory = useSelector(state =>state.filterSlice.choosenCategory)
+  const items = useSelector((state:RootState) =>state.sneakersSlice.items)
+  const sexCategory =useSelector((state:RootState) =>state.filterSlice.sexCategory);
+
+  const searchValue = useSelector((state:RootState) =>state.filterSlice.searchValue);
+  const dispatch =useAppDispatch();
+  const choosenCategory = useSelector((state:RootState) =>state.filterSlice.choosenCategory)
   
   const sexAllCategory=sexCategory ? `&sex=${sexCategory}`: "&sex=female&sex=male" ;
   const getSneak =async()=>{
-  //@ts-ignore
+  
     dispatch(fetchSneakers({ searchValue, choosenCategory, sexAllCategory }));
   }
 
@@ -37,10 +35,9 @@ const MainWebSite:React.FC = () => {
   }
   }, [searchValue,choosenCategory,sexCategory]);
 
-
-  // if(!items){
-  //   return 'Загрузка кроссовок';
-  // }
+  if(!items){
+    return <>"Нету кроссовок"</>;
+  }
 
   return (
     <div className={style.block}>
@@ -55,7 +52,7 @@ const MainWebSite:React.FC = () => {
         </div>
       </div>
       <div className={style.block_conteiner}>
-        {items.map((obj:any) => (
+        {items.map((obj) => (
           <Link key={obj.id} to={`/FullCard/${obj.id}`} >
             <Card
               title={obj.title}
