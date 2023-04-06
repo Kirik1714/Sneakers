@@ -20,7 +20,7 @@ const initialState:FilterState = {
     sortProperty: "rating",
   },
   searchValue:'',
-  sexCategory:'',
+  sexCategory:'', 
 };
 
 
